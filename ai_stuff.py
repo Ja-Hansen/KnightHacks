@@ -1,7 +1,7 @@
-import openai
-# from langchain import OpenAI
+#import openai
+from langchain.chat_models import ChatOpenAI
 
-# openai = OpenAI()
+chat_model = ChatOpenAI(model="gpt-4")
 
 # Initialize the OpenAI API with your API key
 openai.api_key = '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'
