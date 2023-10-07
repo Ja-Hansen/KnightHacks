@@ -4,7 +4,7 @@ import openai
 # openai = OpenAI()
 
 # Initialize the OpenAI API with your API key
-openai.api_key = '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'
+openai.api_key = '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'
 
 def chat_with_gpt():
     print("Chat with GPT-4! Type 'exit' to end the chat.")
