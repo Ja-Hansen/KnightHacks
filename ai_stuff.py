@@ -1,8 +1,8 @@
 #import openai
 from langchain.chat_models import ChatOpenAI
 
-chat_model = ChatOpenAI(model="gpt-4")
-
+chat_model = ChatOpenAI(openai_api_key="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", model="gpt-4")
+'''
 # Initialize the OpenAI API with your API key
 openai.api_key = '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'
 
@@ -23,5 +23,5 @@ def chat_with_gpt():
 
 if __name__ == "__main__":
     chat_with_gpt()
-
+'''
 
