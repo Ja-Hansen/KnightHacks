@@ -30,6 +30,9 @@ if prompt1 == "Add/View Documents":
             pdf_link = f'<a href="{os.path.join(user_documents, pdf_file)}" target="_blank">{pdf_file}</a>'
             lit.markdown(pdf_link, unsafe_allow_html=True)
 
+if prompt1 == "Document Summarization":
+    
+
 
         
         
