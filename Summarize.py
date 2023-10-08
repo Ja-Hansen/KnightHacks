@@ -29,7 +29,7 @@ def summary(pdf_title):
                 model = "gpt-4",
                 messages = [
                     {"role": "system", "content": "You are a helpful research assistant."},
-                    {"role": "user", "content": f"Summarize this very concisely: {page_text}"},
+                    {"role": "user", "content": f"Summarize this extremely, very concisely: {page_text}"},
                         ],
                             )
         

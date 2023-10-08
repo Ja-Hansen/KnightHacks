@@ -9,46 +9,45 @@ from llama_index import(
 from langchain.chat_models import ChatOpenAI
 import os
 
-def parcer():
-    # Set the OpenAI API key as an environment variable
-    os.environ['OPENAI_API_KEY'] = "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"
+
+# Set the OpenAI API key as an environment variable
+os.environ['OPENAI_API_KEY'] = "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"
 
 
-    # Set an environment variable to disable parallelism in tokenizers 
-    # (this is often done to avoid a specific warning message related to tokenizers)
-    os.environ['TOKENIZERS_PARALLELISM']='false'
 
-    # Load documents from the './data' directory using the SimpleDirectoryReader
-    # file_name = "user_documents/" + ask_files + '.pdf'
+# Set an environment variable to disable parallelism in tokenizers 
+# (this is often done to avoid a specific warning message related to tokenizers)
+os.environ['TOKENIZERS_PARALLELISM']='false'
 
-    # documents = SimpleDirectoryReader(file_name).load_data()
-    documents = SimpleDirectoryReader('./user_documents').load_data()
+# Load documents from the './data' directory using the SimpleDirectoryReader
+# file_name = "user_documents/" + ask_files + '.pdf'
 
-    # documents = ask_files.load_data()
+# documents = SimpleDirectoryReader(file_name).load_data()
+documents = SimpleDirectoryReader('./user_documents').load_data()
 
-    # Define the model name to be used
-    modelName = "text-davinci-003"
+# documents = ask_files.load_data()
 
-    # Initialize a predictor using the ChatOpenAI model with specified parameters
-    predictor=LLMPredictor(llm=ChatOpenAI(temperature=0,
-                        model_name=modelName))
-        
-    # Create a service context with default settings, specifying the predictor and chunk size
-    serv_context = ServiceContext.from_defaults(
-        llm_predictor=predictor,
-        chunk_size=600
-        )
+# Define the model name to be used
+modelName = "text-davinci-003"
 
-    # Create an index using the GPTVectorStoreIndex. This index will represent the documents 
-    # in a format suitable for querying using the GPT model.
-    index=GPTVectorStoreIndex.from_documents(documents,
-                            service_context=serv_context)
+# Initialize a predictor using the ChatOpenAI model with specified parameters
+predictor=LLMPredictor(llm=ChatOpenAI(temperature=0,
+                    model_name=modelName))
+    
+# Create a service context with default settings, specifying the predictor and chunk size
+serv_context = ServiceContext.from_defaults(
+    llm_predictor=predictor,
+    chunk_size=600
+    )
 
-    # Persist (save) the index data to the "./chunkstorage" directory
-    index.storage_context.persist(
-        persist_dir="./chunkstorage")
+# Create an index using the GPTVectorStoreIndex. This index will represent the documents 
+# in a format suitable for querying using the GPT model.
+index=GPTVectorStoreIndex.from_documents(documents,
+                        service_context=serv_context)
 
-    # Print a message indicating where the modeled data has been saved
-    print("Written modeled data in ./chunkstorage folder")
+# Persist (save) the index data to the "./chunkstorage" directory
+index.storage_context.persist(
+    persist_dir="./chunkstorage")
 
-parcer()
+# Print a message indicating where the modeled data has been saved
+print("Written modeled data in ./chunkstorage folder")
