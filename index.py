@@ -18,8 +18,7 @@ storage_context = StorageContext.from_defaults(persist_dir='./chunkstorage')
 # Load index
 loadedIndex = load_index_from_storage(storage_context)
 # loadedIndex._service_context.llm_predictor.llm.model_name="text-davinci-003"
-# print(loadedIndex._service_context.llm_predictor.llm)
-# print()
+
 
 retriever = loadedIndex.as_retriever()
 # retriever.similarity_top_k=k
