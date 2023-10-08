@@ -5,7 +5,7 @@ from Summarize import summary
 from langchain_programming import langchain_agent
 
 
-lit.title("Morepain and Morepain")
+lit.title("Morgan and Morgan")
 user_documents = "user_documents"
 prompt1 = lit.sidebar.selectbox("Please choose the best option that matches your selection.", ("Add/View Documents", "Document Summarization", "General Inquiries", "Ask about Document"))
 
