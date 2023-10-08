@@ -1,4 +1,4 @@
-'''from langchain.llms import OpenAI
+from langchain.llms import OpenAI
 from langchain.prompts import PromptTemplate
 from dotenv import load_dotenv
 from langchain.chains import LLMChain
@@ -21,4 +21,4 @@ def generate_law(paperwork):
 if __name__ == "__main__":
  
    paper = input("Hello! Which document would you like to ")
-   print(generate_law("deposition"))'''
+   print(generate_law("deposition"))
