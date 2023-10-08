@@ -1,4 +1,3 @@
-# Import necessary classes and functions from the specified modules
 from llama_index import(
 	GPTVectorStoreIndex,
 	SimpleDirectoryReader,
@@ -8,7 +7,7 @@ from langchain.chat_models import ChatOpenAI
 import os
 
 # Set the OpenAI API key as an environment variable
-os.environ['OPENAI_API_KEY'] = os.environ.get('OPENAI_API_KEY')
+os.environ['OPENAI_API_KEY'] = "_____"
 
 
 # Set an environment variable to disable parallelism in tokenizers 
@@ -16,7 +15,7 @@ os.environ['OPENAI_API_KEY'] = os.environ.get('OPENAI_API_KEY')
 os.environ['TOKENIZERS_PARALLELISM']='false'
 
 # Load documents from the './data' directory using the SimpleDirectoryReader
-documents = SimpleDirectoryReader('./folder').load_data()
+documents = SimpleDirectoryReader('./user_documents').load_data()
 
 # Define the model name to be used
 modelName = "text-davinci-003"

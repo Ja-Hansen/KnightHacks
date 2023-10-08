@@ -4,10 +4,8 @@ from llama_index import(
 from llama_index.query_engine import RetrieverQueryEngine
 import time
 import os
-# from langchain.chat_models import ChatOpenAI
 
-
-os.environ['OPENAI_API_KEY'] = os.environ.get('OPENAI_API_KEY')
+os.environ['OPENAI_API_KEY'] = "____"
 os.environ['TOKENIZERS_PARALLELISM']='false'
 
 # Number of chunks you would like to use for an answer.
@@ -20,8 +18,8 @@ storage_context = StorageContext.from_defaults(persist_dir='./chunkstorage')
 # Load index
 loadedIndex = load_index_from_storage(storage_context)
 # loadedIndex._service_context.llm_predictor.llm.model_name="text-davinci-003"
-print(loadedIndex._service_context.llm_predictor.llm)
-print()
+# print(loadedIndex._service_context.llm_predictor.llm)
+# print()
 
 retriever = loadedIndex.as_retriever()
 # retriever.similarity_top_k=k
@@ -56,4 +54,4 @@ while (True):
         f.write("User:\n" + p + "\n\n")
         f.write("AI:\n" + str(response) + "\n\n")
 
-print("Bye bye")
+print("Thank you for using us!")
