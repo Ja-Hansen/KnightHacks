@@ -7,7 +7,7 @@ import os
 # from langchain.chat_models import ChatOpenAI
 
 def indexing():
-    os.environ['OPENAI_API_KEY'] = "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"
+    os.environ['OPENAI_API_KEY'] = ""
     os.environ['TOKENIZERS_PARALLELISM']='false'
 
     # Number of chunks you would like to use for an answer.
