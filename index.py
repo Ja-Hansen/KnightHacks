@@ -4,8 +4,9 @@ from llama_index import(
 from llama_index.query_engine import RetrieverQueryEngine
 import time
 import os
-
-os.environ['OPENAI_API_KEY'] = "____"
+from dotenv import load_dotenv
+load_dotenv()
+os.environ['OPENAI_API_KEY'] = os.getenv("OPENAI_API_KEY")
 os.environ['TOKENIZERS_PARALLELISM']='false'
 
 # Number of chunks you would like to use for an answer.

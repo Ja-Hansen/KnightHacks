@@ -1,8 +1,0 @@
-User: Welcome to OpenAI chat!
-
-User:
-what is valet trash?
-
-AI:
-Valet trash refers to a service provided by the apartment complex where residents can dispose of their trash by placing it in a designated trash can. The trash is then collected by the apartment staff on a regular basis. It is important to note that loose trash is not permitted inside the valet trash can and all trash must be bagged and tied. Failure to comply with the valet trash guidelines may result in fines.
-
