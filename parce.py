@@ -1,4 +1,6 @@
 
+
+# Import necessary classes and functions from the specified modules
 from llama_index import(
 	GPTVectorStoreIndex,
 	SimpleDirectoryReader,
@@ -9,8 +11,7 @@ import os
 
 
 # Set the OpenAI API key as an environment variable
-os.environ['OPENAI_API_KEY'] = "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"
-
+os.environ['OPENAI_API_KEY'] = os.environ.get('OPENAI_API_KEY')
 
 
 # Set an environment variable to disable parallelism in tokenizers 
@@ -18,12 +19,7 @@ os.environ['OPENAI_API_KEY'] = "sk-mVa07j2R65d2EkhqLLajT3BlbkFJYsHnkNy6UMM5rVxgh
 os.environ['TOKENIZERS_PARALLELISM']='false'
 
 # Load documents from the './data' directory using the SimpleDirectoryReader
-# file_name = "user_documents/" + ask_files + '.pdf'
-
-# documents = SimpleDirectoryReader(file_name).load_data()
-documents = SimpleDirectoryReader('./user_documents').load_data()
-
-# documents = ask_files.load_data()
+documents = SimpleDirectoryReader('./folder').load_data()
 
 # Define the model name to be used
 modelName = "text-davinci-003"
