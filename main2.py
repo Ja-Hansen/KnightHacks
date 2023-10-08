@@ -1,9 +1,11 @@
 import langchain_programming as lcp
 import streamlit as lit
 import os
+from Summarize import summary
+from langchain_programming import langchain_agent
 lit.title("Morepain and Morepain")
 user_documents = "user_documents"
-prompt1 = lit.sidebar.selectbox("Please choose the best option that matches your selection.", ("Add/View Documents", "Document Summarization", "General Inquiry", "Interrogatory Summarization"))
+prompt1 = lit.sidebar.selectbox("Please choose the best option that matches your selection.", ("Add/View Documents", "Document Summarization", "General Inquiries", "Interrogatory Summarization"))
 
 if prompt1 == "Add/View Documents":
     semi_prompt1 = lit.sidebar.selectbox("Would you like to add or view a document?", ("Add", "View"))
@@ -31,8 +33,14 @@ if prompt1 == "Add/View Documents":
             lit.markdown(pdf_link, unsafe_allow_html=True)
 
 if prompt1 == "Document Summarization":
+    lit.subheader("Enter pdf file name (without .pdf)")
+    pdf_title = lit.text_input("pdf name")
+    summary_result = summary(pdf_title)
+    lit.markdown(body = summary_result)
+
+if prompt1 == "General Inquiries":
+    lit.subheader("Enter any questions related to Morgan&Morgan, the law, or any court proceesings. Our chat bot will try our best to explain it to you :)")
+    inquiry = lit.text_input("Enter question below")
+    inquiry_result = langchain_agent(inquiry)
+    lit.markdown(body = inquiry_result)
     
-
-
-        
-        
