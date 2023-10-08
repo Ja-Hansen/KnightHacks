@@ -3,7 +3,6 @@ import PyPDF2
 import re
 import os
 
-os.environ['OPENAI_API_KEY'] = ""
 openai.api_key = os.environ.get('OPENAI_API_KEY')
 pdf_summary_text = ""
 pdf_file_path = input("Enter pdf file name (without .pdf): ") + ".pdf"
