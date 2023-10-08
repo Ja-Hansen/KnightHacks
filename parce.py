@@ -1,6 +1,4 @@
 
-
-# Import necessary classes and functions from the specified modules
 from llama_index import(
 	GPTVectorStoreIndex,
 	SimpleDirectoryReader,
