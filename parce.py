@@ -1,3 +1,4 @@
+# Import necessary classes and functions from the specified modules
 from llama_index import(
 	GPTVectorStoreIndex,
 	SimpleDirectoryReader,
@@ -6,8 +7,9 @@ from llama_index import(
 from langchain.chat_models import ChatOpenAI
 import os
 
+
 # Set the OpenAI API key as an environment variable
-os.environ['OPENAI_API_KEY'] = "_____"
+os.environ['OPENAI_API_KEY'] = os.environ.get('OPENAI_API_KEY')
 
 
 # Set an environment variable to disable parallelism in tokenizers 
@@ -15,7 +17,7 @@ os.environ['OPENAI_API_KEY'] = "_____"
 os.environ['TOKENIZERS_PARALLELISM']='false'
 
 # Load documents from the './data' directory using the SimpleDirectoryReader
-documents = SimpleDirectoryReader('./user_documents').load_data()
+documents = SimpleDirectoryReader('./folder').load_data()
 
 # Define the model name to be used
 modelName = "text-davinci-003"
@@ -33,7 +35,7 @@ serv_context = ServiceContext.from_defaults(
 # Create an index using the GPTVectorStoreIndex. This index will represent the documents 
 # in a format suitable for querying using the GPT model.
 index=GPTVectorStoreIndex.from_documents(documents,
-                          service_context=serv_context)
+                        service_context=serv_context)
 
 # Persist (save) the index data to the "./chunkstorage" directory
 index.storage_context.persist(

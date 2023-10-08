@@ -1,0 +1,14 @@
+User: Welcome to OpenAI chat!
+
+User:
+What project has joshua-Luke made?
+
+AI:
+Joshua-Luke has made a project called "Music Pair."
+
+User:
+What can you not put down your garbage disposal?
+
+AI:
+You cannot put the following items down your garbage disposal: rice, pasta, oats, bread, bones, nuts and shells, pits and seeds, egg shells, potato peels, coffee grounds, non-food materials, grease, oil, and fat.
+
